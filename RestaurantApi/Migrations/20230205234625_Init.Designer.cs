@@ -9,7 +9,7 @@ using RestaurantApi.Entities;
 namespace RestaurantApi.Migrations
 {
     [DbContext(typeof(RestaurantDbContext))]
-    [Migration("20230205213405_Init")]
+    [Migration("20230205234625_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,9 +93,10 @@ namespace RestaurantApi.Migrations
                     b.Property<bool>("HasDelivery")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Name")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasMaxLength(25)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(25)");
 
                     b.HasKey("Id");
 
