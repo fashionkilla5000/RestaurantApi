@@ -45,7 +45,7 @@ namespace RestaurantApi
 
             app.UseRouting();
 
-            app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

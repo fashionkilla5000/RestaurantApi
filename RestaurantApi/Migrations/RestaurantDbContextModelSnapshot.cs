@@ -18,7 +18,7 @@ namespace RestaurantApi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("RestaurantApi.Entities.Adress", b =>
+            modelBuilder.Entity("RestaurantApi.Entities.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace RestaurantApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Adresses");
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("RestaurantApi.Entities.Dish", b =>
@@ -73,7 +73,7 @@ namespace RestaurantApi.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("AdressId")
+                    b.Property<int>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<string>("Category")
@@ -98,7 +98,7 @@ namespace RestaurantApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AdressId")
+                    b.HasIndex("AddressId")
                         .IsUnique();
 
                     b.ToTable("Restaurants");
@@ -117,16 +117,16 @@ namespace RestaurantApi.Migrations
 
             modelBuilder.Entity("RestaurantApi.Entities.Restaurant", b =>
                 {
-                    b.HasOne("RestaurantApi.Entities.Adress", "Adress")
+                    b.HasOne("RestaurantApi.Entities.Address", "Address")
                         .WithOne("Restaurant")
-                        .HasForeignKey("RestaurantApi.Entities.Restaurant", "AdressId")
+                        .HasForeignKey("RestaurantApi.Entities.Restaurant", "AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Adress");
+                    b.Navigation("Address");
                 });
 
-            modelBuilder.Entity("RestaurantApi.Entities.Adress", b =>
+            modelBuilder.Entity("RestaurantApi.Entities.Address", b =>
                 {
                     b.Navigation("Restaurant");
                 });

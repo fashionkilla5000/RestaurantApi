@@ -8,6 +8,7 @@ namespace RestaurantApi
 {
     public class RestaurantSeeder
     {
+        
         private readonly RestaurantDbContext _dbContext;
 
         public RestaurantSeeder(RestaurantDbContext dbContext)
@@ -38,62 +39,50 @@ namespace RestaurantApi
                 {
                     Name = "KFC",
                     Category = "Fast Food",
-                    Description = "xXD XDDF SDFDSBFgb sfvwebacieac",
-                    ContactEmail="con@kfc.pl",
+                    Description =
+                        "KFC (short for Kentucky Fried Chicken) is an American fast food restaurant chain headquartered in Louisville, Kentucky, that specializes in fried chicken.",
+                    ContactEmail = "contact@kfc.com",
                     HasDelivery = true,
                     Dishes = new List<Dish>()
                     {
                         new Dish()
                         {
-                            Name = "New one",
-                            Price = 10.3M,
+                            Name = "Nashville Hot Chicken",
+                            Price = 10.30M,
                         },
+
                         new Dish()
                         {
-                            Name ="two",
-                            Price = 5.7M,
+                            Name = "Chicken Nuggets",
+                            Price = 5.30M,
                         },
-
                     },
-                    Adress = new Adress()
+                    Address = new Address()
                     {
-                        City= "Warsaw",
-                        Street = "Warszawska 1",
-                        PostalCode= "01-321",
+                        City = "Kraków",
+                        Street = "Długa 5",
+                        PostalCode = "30-001"
                     }
                 },
-
-                 new Restaurant()
+                new Restaurant()
                 {
-                    Name = "McDonald",
+                    Name = "McDonald Szewska",
                     Category = "Fast Food",
-                    Description = "xX22D X3DDF nomSDFDSBFgb sfvwebacieac",
-                    ContactEmail="con@mcd.pl",
+                    Description =
+                        "McDonald's Corporation (McDonald's), incorporated on December 21, 1964, operates and franchises McDonald's restaurants.",
+                    ContactEmail = "contact@mcdonald.com",
                     HasDelivery = true,
-                    Dishes = new List<Dish>()
+                    Address = new Address()
                     {
-                        new Dish()
-                        {
-                            Name = "pierww",
-                            Price = 7.3M,
-                        },
-                        new Dish()
-                        {
-                            Name ="drugie",
-                            Price = 7.7M,
-                        },
-
-                    },
-                    Adress = new Adress()
-                    {
-                        City= "Warsaw",
-                        Street = "Warszawska 2",
-                        PostalCode= "01-321",
+                        City = "Kraków",
+                        Street = "Szewska 2",
+                        PostalCode = "30-001"
                     }
-                },
-
+                }
             };
+
             return restaurants;
         }
     }
 }
+
